@@ -34,6 +34,8 @@ body #mainContainer #faqCard {
   background-color: #fff;
   border-radius: 22px;
   overflow: hidden;
+  -webkit-box-shadow: 0px 30px 35px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 30px 35px -8px rgba(0, 0, 0, 0.3);
 }
 body #mainContainer #faqCard #illustration {
   z-index: 2;
@@ -171,19 +173,20 @@ body #mainContainer .attribution a {
     align-items: flex-start;
   }
   body #mainContainer #faqCard {
-    position: relative;
+    position: fixed;
     width: 88vw;
     height: 535px;
     flex-direction: column;
     align-items: center;
-    left: 0;
+    left: 50%;
     top: 148px;
+    transform: translateX(-50%);
+    overflow: visible;
   }
   body #mainContainer #faqCard #illustration {
     position: fixed;
-    top: 39px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-110px);
     z-index: 4;
     height: 200px;
     background-image: url("../images/illustration-woman-online-mobile.svg");
@@ -193,9 +196,8 @@ body #mainContainer .attribution a {
   }
   body #mainContainer #faqCard #illustrationBackground {
     position: fixed;
-    top: 148px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-5px);
     z-index: 3;
     height: 103px;
     background-image: url("../images/bg-pattern-mobile.svg");
@@ -229,6 +231,9 @@ body #mainContainer .attribution a {
   }
   body #mainContainer #faqCard #questions .content p {
     width: 65.333vw;
+  }
+  body #mainContainer .attribution {
+    visibility: hidden;
   }
 }
 
