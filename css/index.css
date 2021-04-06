@@ -33,6 +33,7 @@ body #mainContainer #faqCard {
   left: 19.444vw;
   background-color: #fff;
   border-radius: 22px;
+  overflow: hidden;
 }
 body #mainContainer #faqCard #illustration {
   z-index: 2;
@@ -44,28 +45,28 @@ body #mainContainer #faqCard #illustration {
   background-repeat: no-repeat;
   background-position: top 70px right;
 }
-body #mainContainer #faqCard #illustration #box {
+body #mainContainer #faqCard #box {
   z-index: 3;
   width: 195px;
   height: 190px;
-  position: relative;
+  position: fixed;
   top: 205px;
   background-image: url("../images/illustration-box-desktop.svg");
   background-size: auto;
   background-repeat: no-repeat;
-  transform: translateX(-95px);
+  transform: translateX(-95px) translateY(17.1875vh);
 }
 body #mainContainer #faqCard #illustrationBackground {
   z-index: 1;
   position: absolute;
-  width: 390px;
-  height: 510px;
+  width: 964px;
+  height: 944px;
   left: 0;
   background-image: url("../images/bg-pattern-desktop.svg");
-  background-size: auto;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
-  transform: translateY(120px);
+  transform: translateX(-573px) translateY(-295px);
 }
 body #mainContainer #faqCard #questions {
   position: relative;
@@ -148,11 +149,11 @@ body #mainContainer .attribution a {
   body #mainContainer #faqCard #illustration {
     width: 290px;
   }
-  body #mainContainer #faqCard #illustration #box {
+  body #mainContainer #faqCard #box {
     background-image: none;
   }
   body #mainContainer #faqCard #illustrationBackground {
-    width: 290px;
+    transform: translateX(-673px) translateY(-295px);
   }
   body #mainContainer #faqCard #questions {
     left: 4.861vw;
