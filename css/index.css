@@ -137,6 +137,11 @@ body #mainContainer .attribution {
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
+  color: #e7e7e9;
+}
+body #mainContainer .attribution a {
+  text-decoration: none;
+  color: #f47c57;
 }
 
 @media (max-width: 1200px) {
