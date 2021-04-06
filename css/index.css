@@ -133,7 +133,7 @@ body #mainContainer #faqCard #questions .content {
   transition: height 200ms ease;
 }
 body #mainContainer .attribution {
-  position: fixed;
+  position: absolute;
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
