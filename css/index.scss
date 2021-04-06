@@ -1,0 +1,284 @@
+// colors
+// ------------------------
+// primary text
+$dark-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+
+// neutral text
+$dark-grayish-blue: hsl(237, 12%, 33%);
+$grayish-blue: hsl(240, 6%, 50%);
+
+// background gradient
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+
+// dividers
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+// font
+@font-face {font-family: "KumbhSans"; font-weight: 400; src: url('../fonts/KumbhSans-Regular.ttf')};
+@font-face {font-family: "KumbhSans"; font-weight: 700; src: url('../fonts/KumbhSans-Bold.ttf')};
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "KumbhSans";
+    font-size: 12px;
+
+    #mainContainer {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-image: linear-gradient(0deg, $soft-blue, $soft-violet);
+
+        #faqCard {
+            // width: 920px;
+            // height: 510px;
+            width: 63.889vw;
+            height: 66.406vh;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            left: 19.444vw;
+            background-color: #fff;
+            border-radius: 22px;
+
+            #illustration {
+                z-index: 2;
+                width: 390px;
+                height: 100%;
+                position: relative;
+                background-image: url('../images/illustration-woman-online-desktop.svg');
+                background-size: auto;
+                background-repeat: no-repeat;
+                background-position: top 70px right;
+
+                #box {
+                    z-index: 3;
+                    width: 195px;
+                    height: 190px;
+                    position: relative;
+                    top: 205px;
+                    background-image: url('../images/illustration-box-desktop.svg');
+                    background-size: auto;
+                    background-repeat: no-repeat;
+                    transform: translateX(-95px);
+                }
+            }
+
+            #illustrationBackground {
+                z-index: 1;
+                position: absolute;
+                width: 390px;
+                height: 510px;
+                left: 0;
+                background-image: url('../images/bg-pattern-desktop.svg');
+                background-size: auto;
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                transform: translateY(120px);
+            }
+
+            #questions {
+                position: relative;
+                // left: 85px;
+                // top: 70px;
+                left: 5.903vw;
+                margin-top: 9.115vh;
+                height: 57.291vh;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+
+                h2 {
+                    position: relative;
+                    font-size: 30px;
+                    color: $dark-blue;
+                    margin-bottom: 24px;
+                }
+
+                .accordion {
+                    position: relative;
+                    border: 0;
+                    outline: none;
+                    padding: 16px 0;
+                    margin-top: 1px;
+                    // width: 350px;
+                    width: 24.306vw;
+                    flex-direction: column;
+                    text-align: left;
+                    text-justify: center;
+                    font-family: inherit;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $grayish-blue;
+                    background-color: transparent;
+                    color: $dark-grayish-blue;
+                    cursor: pointer;
+
+                    .arrow {
+                        position: absolute;
+                        right: 15px;
+                        top: 17px;
+                        transition: all 500ms ease;
+                        
+                        &.up {
+                            transform: rotateX(180deg);
+                        }
+                    }
+
+                    &:hover {
+                        color: $soft-red;
+                    }
+
+                    &.active {
+                        font-weight: 700;
+                        color: $dark-blue;
+
+                        &:hover {
+                            color: $soft-red;
+                        }
+                    }
+                }
+
+                .content {
+                    width: 24.306vw;
+                    height: 0;
+                    display: flex;
+                    align-items: flex-start;
+                    overflow: hidden;
+                    border-bottom: 1px solid $light-grayish-blue;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 18px;
+                    color: $grayish-blue;
+                    transition: height 200ms ease;
+                }
+            }
+        }
+
+        .attribution {
+            position: fixed;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        #mainContainer {
+            #faqCard {
+                #illustration {
+                    width: 290px;
+
+                    #box {
+                        background-image: none;
+                    }
+                }
+
+                #illustrationBackground {
+                    width: 290px;
+                }
+
+                #questions {
+                    left: 4.861vw;
+
+                    .accordion {
+                        width: 28.306vw;
+                    }
+
+                    .content {
+                        width: 28.306vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// switch to mobile
+@media (max-width: 1000px) {
+    body {
+        #mainContainer {
+            justify-content: center;
+            align-items: flex-start;
+
+            #faqCard {
+                position: relative;
+                width: 88vw;
+                height: 535px;
+                flex-direction: column;
+                align-items: center;
+                left: 0;
+                top: 148px;
+
+                #illustration {
+                    position: fixed;
+                    top: 39px;
+                    // left: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 4;
+                    height: 200px;
+                    background-image: url('../images/illustration-woman-online-mobile.svg');
+                    background-size: auto;
+                    background-repeat: no-repeat;
+                    background-position: left;
+                }
+
+                #illustrationBackground {
+                    position: fixed;
+                    top: 148px;
+                    // left: 42px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 3;
+                    height: 103px;
+                    background-image: url('../images/bg-pattern-mobile.svg');
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                #questions {
+                    left: 0;
+                    top: 70px;
+                    width: 74.667vw;
+                    height: 390px;
+
+                    h2 {
+                        text-align: center;
+                        text-justify: center;
+                        font-size: 31px;
+                        padding-top: 2px;
+                        margin-bottom: 14px;
+                    }
+
+                    .accordion {
+                        width: 74.667vw;
+                        font-size: 12px;
+
+                        span {
+                            pointer-events: none;
+                        }
+                    }
+
+                    .content {
+                        width: 74.667vw;
+                        font-size: 11px;
+
+                        p {
+                            width: 65.333vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

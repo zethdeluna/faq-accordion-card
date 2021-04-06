@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "KumbhSans";
+  font-weight: 400;
+  src: url("../fonts/KumbhSans-Regular.ttf");
+}
+@font-face {
+  font-family: "KumbhSans";
+  font-weight: 700;
+  src: url("../fonts/KumbhSans-Bold.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "KumbhSans";
+  font-size: 12px;
+}
+body #mainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(0deg, #6565e7, #af67e9);
+}
+body #mainContainer #faqCard {
+  width: 63.889vw;
+  height: 66.406vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 19.444vw;
+  background-color: #fff;
+  border-radius: 22px;
+}
+body #mainContainer #faqCard #illustration {
+  z-index: 2;
+  width: 390px;
+  height: 100%;
+  position: relative;
+  background-image: url("../images/illustration-woman-online-desktop.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top 70px right;
+}
+body #mainContainer #faqCard #illustration #box {
+  z-index: 3;
+  width: 195px;
+  height: 190px;
+  position: relative;
+  top: 205px;
+  background-image: url("../images/illustration-box-desktop.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  transform: translateX(-95px);
+}
+body #mainContainer #faqCard #illustrationBackground {
+  z-index: 1;
+  position: absolute;
+  width: 390px;
+  height: 510px;
+  left: 0;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  transform: translateY(120px);
+}
+body #mainContainer #faqCard #questions {
+  position: relative;
+  left: 5.903vw;
+  margin-top: 9.115vh;
+  height: 57.291vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+body #mainContainer #faqCard #questions h2 {
+  position: relative;
+  font-size: 30px;
+  color: #1d1e35;
+  margin-bottom: 24px;
+}
+body #mainContainer #faqCard #questions .accordion {
+  position: relative;
+  border: 0;
+  outline: none;
+  padding: 16px 0;
+  margin-top: 1px;
+  width: 24.306vw;
+  flex-direction: column;
+  text-align: left;
+  text-justify: center;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #787887;
+  background-color: transparent;
+  color: #4a4b5e;
+  cursor: pointer;
+}
+body #mainContainer #faqCard #questions .accordion .arrow {
+  position: absolute;
+  right: 15px;
+  top: 17px;
+  transition: all 500ms ease;
+}
+body #mainContainer #faqCard #questions .accordion .arrow.up {
+  transform: rotateX(180deg);
+}
+body #mainContainer #faqCard #questions .accordion:hover {
+  color: #f47c57;
+}
+body #mainContainer #faqCard #questions .accordion.active {
+  font-weight: 700;
+  color: #1d1e35;
+}
+body #mainContainer #faqCard #questions .accordion.active:hover {
+  color: #f47c57;
+}
+body #mainContainer #faqCard #questions .content {
+  width: 24.306vw;
+  height: 0;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  border-bottom: 1px solid #e7e7e9;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #787887;
+  transition: height 200ms ease;
+}
+body #mainContainer .attribution {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1200px) {
+  body #mainContainer #faqCard #illustration {
+    width: 290px;
+  }
+  body #mainContainer #faqCard #illustration #box {
+    background-image: none;
+  }
+  body #mainContainer #faqCard #illustrationBackground {
+    width: 290px;
+  }
+  body #mainContainer #faqCard #questions {
+    left: 4.861vw;
+  }
+  body #mainContainer #faqCard #questions .accordion {
+    width: 28.306vw;
+  }
+  body #mainContainer #faqCard #questions .content {
+    width: 28.306vw;
+  }
+}
+@media (max-width: 1000px) {
+  body #mainContainer {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  body #mainContainer #faqCard {
+    position: relative;
+    width: 88vw;
+    height: 535px;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    top: 148px;
+  }
+  body #mainContainer #faqCard #illustration {
+    position: fixed;
+    top: 39px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    height: 200px;
+    background-image: url("../images/illustration-woman-online-mobile.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  body #mainContainer #faqCard #illustrationBackground {
+    position: fixed;
+    top: 148px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    height: 103px;
+    background-image: url("../images/bg-pattern-mobile.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  body #mainContainer #faqCard #questions {
+    left: 0;
+    top: 70px;
+    width: 74.667vw;
+    height: 390px;
+  }
+  body #mainContainer #faqCard #questions h2 {
+    text-align: center;
+    text-justify: center;
+    font-size: 31px;
+    padding-top: 2px;
+    margin-bottom: 14px;
+  }
+  body #mainContainer #faqCard #questions .accordion {
+    width: 74.667vw;
+    font-size: 12px;
+  }
+  body #mainContainer #faqCard #questions .accordion span {
+    pointer-events: none;
+  }
+  body #mainContainer #faqCard #questions .content {
+    width: 74.667vw;
+    font-size: 11px;
+  }
+  body #mainContainer #faqCard #questions .content p {
+    width: 65.333vw;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
